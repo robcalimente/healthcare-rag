@@ -1,16 +1,21 @@
 """
-Embeds chunks.jsonl (produced by prepare_data.py) and persists a raw embeddings
-matrix plus a metadata sidecar at data/index/. Run once offline before deploying
-the backend -- the backend loads this pre-built index at startup rather than
-embedding at request time.
+Embeds chunks.jsonl (produced by prepare_data.py) and persists:
+  - data/index/embeddings.npy   float16 vector matrix, loaded fully into RAM at
+                                 runtime -- this is the only thing that needs to be
+                                 (the dot-product search needs the whole matrix)
+  - data/index/chunks.db        SQLite table with id/patient_id/record_type/date/text,
+                                 rowid matching the embeddings row order. Chunk TEXT
+                                 stays on disk and is fetched only for the ~15-25
+                                 results actually returned per query.
 
-Plain numpy (not Chroma, not a FAISS index structure) was chosen for the deployed
-index specifically for its small memory footprint: at ~93k chunks, a brute-force
-dot product against a raw float32 matrix is a few milliseconds and needs no
-SQLite/HNSW-graph storage overhead, which matters on a free-tier host. A FAISS/ANN
-index only pays for itself at much larger corpus sizes than this project has.
+Earlier version kept a Python list of 92k dicts (with full text) in memory at
+runtime alongside the embeddings matrix -- that's what blew past Render free tier's
+512MB RAM limit on first deploy. Text doesn't need to be in RAM for search; only
+retrieved results need it, and SQLite with an index on patient_id serves that
+cheaply without holding the whole corpus resident.
 """
 import json
+import sqlite3
 from pathlib import Path
 
 import numpy as np
@@ -48,23 +53,35 @@ def main():
         if (i // BATCH_SIZE) % 20 == 0:
             print(f"embedded {min(i + BATCH_SIZE, len(chunks))}/{len(chunks)}")
 
-    # normalized vectors -> dot product = cosine similarity, computed directly in
-    # vectorstore.py at query time (see module docstring for why no FAISS index)
-    np.save(INDEX_DIR / "embeddings.npy", all_embeddings)
+    # float16 halves the in-RAM footprint of the one thing that must stay resident;
+    # normalized vectors -> dot product = cosine similarity, precision loss here
+    # doesn't meaningfully affect retrieval ranking
+    np.save(INDEX_DIR / "embeddings.npy", all_embeddings.astype("float16"))
 
-    metadata = [
-        {
-            "id": c["id"],
-            "patient_id": c["patient_id"],
-            "record_type": c["record_type"],
-            "date": c["date"],
-            "text": c["text"],
-        }
-        for c in chunks
-    ]
-    with open(INDEX_DIR / "metadata.jsonl", "w", encoding="utf-8") as f:
-        for m in metadata:
-            f.write(json.dumps(m) + "\n")
+    db_path = INDEX_DIR / "chunks.db"
+    if db_path.exists():
+        db_path.unlink()
+    conn = sqlite3.connect(db_path)
+    conn.execute("""
+        CREATE TABLE chunks (
+            row_index INTEGER PRIMARY KEY,
+            id TEXT,
+            patient_id TEXT,
+            record_type TEXT,
+            date TEXT,
+            text TEXT
+        )
+    """)
+    conn.executemany(
+        "INSERT INTO chunks VALUES (?,?,?,?,?,?)",
+        [
+            (i, c["id"], c["patient_id"], c["record_type"], c["date"], c["text"])
+            for i, c in enumerate(chunks)
+        ],
+    )
+    conn.execute("CREATE INDEX idx_chunks_patient ON chunks(patient_id)")
+    conn.commit()
+    conn.close()
 
     print(f"done. index persisted at {INDEX_DIR}")
 

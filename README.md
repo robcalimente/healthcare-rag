@@ -18,16 +18,21 @@ questions).
 
 ## Architecture
 
-- **Data**: ~1000 synthetic patients (conditions, medications, encounters, lab
-  observations, clinical notes), generated via Synthea.
+- **Data**: 100 synthetic patients (conditions, medications, encounters, lab
+  observations, clinical notes), generated via Synthea. Originally generated at
+  1000 patients and sampled down to fit free-tier hosting RAM — see the
+  Methodology page's "hosting constraint" section for why.
 - **Retrieval**: two paths, chosen by a deterministic rule-based router.
-  - Vector RAG (Chroma, MiniLM embeddings) for descriptive/lookup questions, scoped by
-    patient ID metadata filter in patient mode, unfiltered in population mode.
+  - Vector RAG (plain in-memory cosine similarity over MiniLM embeddings, no ANN
+    index needed at this scale) for descriptive/lookup questions, scoped by
+    patient ID in patient mode, unfiltered in population mode. Chunk text lives
+    in SQLite and is fetched only for the results actually returned per query,
+    not held in memory for the whole corpus.
   - Structured query over the underlying Synthea tables for counting/aggregate
     questions in population mode (vector similarity search is not a reliable way to
     produce exact counts).
 - **LLM**: Groq API (free tier).
-- **Backend**: FastAPI, deployed to Render/Fly.io free tier.
+- **Backend**: FastAPI, deployed to Render free tier.
 - **Frontend**: React, deployed to GitHub Pages.
 
 Every answer ships with a retrieval trace: which patient(s) matched, which chunks were
@@ -36,16 +41,20 @@ path handled the question.
 
 ## Eval
 
-A hand-crafted set of ~30-50 question/answer pairs, each with an answer mechanically
-derivable from the underlying Synthea data (not guessed). Retrieval quality is scored
-exactly against known source records; answer correctness is graded manually. Results
-are published on the project's own methodology page, not just claimed in this README.
+A hand-crafted set of 40 question/answer pairs (20 patient-scoped, 20
+population-scoped), each with an answer mechanically derivable from the underlying
+Synthea data (not guessed). Retrieval/router path is scored automatically; answer
+correctness is graded manually. Results are published on the project's own
+methodology page, not just claimed in this README. Current numbers: population-mode
+(structured counting) is 100% accurate; patient-mode list questions are 35% under
+strict all-or-nothing grading, a real and documented retrieval-depth limitation, not
+smoothed over.
 
 ## Status
 
-Scoped 2026-08-07. Build in progress — see `PROGRESS.md` in the portfolio site repo
-(`robcalimente.github.io`) for the full phased plan (Phase 1 = MVP, Phase 2 = stretch
-goals tracked separately, not yet started).
+Scoped 2026-08-07, built and deployed the same day. See `PROGRESS.md` in the
+portfolio site repo (`robcalimente.github.io`) for the full phased plan (Phase 1 =
+MVP, done; Phase 2 = stretch goals tracked separately, not started).
 
 ## Local development
 

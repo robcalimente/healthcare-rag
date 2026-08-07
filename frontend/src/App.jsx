@@ -109,7 +109,7 @@ export default function App() {
             {mode === "population" && (
               <div className="population-note">
                 <p>
-                  Ask questions across all {patients.length || 1000} synthetic
+                  Ask questions across all {patients.length || 100} synthetic
                   patients. Counting/percentage questions are answered by a real
                   database query, not vector search &mdash; see the Methodology tab
                   for why.

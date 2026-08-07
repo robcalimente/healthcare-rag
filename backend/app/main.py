@@ -20,8 +20,7 @@ def preload():
     lazily on the first request -- avoids a slow/cold first request timing out."""
     vectorstore._model()
     vectorstore._embeddings()
-    vectorstore._metadata()
-    vectorstore._patient_index_map()
+    vectorstore._patient_row_indices()
 
 
 @app.get("/api/health")

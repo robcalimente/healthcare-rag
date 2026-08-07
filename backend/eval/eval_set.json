@@ -1,167 +1,20 @@
 [
   {
     "mode": "patient",
-    "patient_id": "6bd54944-c9ac-662a-098a-749b0998fcfd",
-    "patient_name": "Dante562 Zulauf375",
-    "question": "What medications is Dante562 Zulauf375 currently on?",
+    "patient_id": "ee4756e8-09fb-f7be-f6a4-0c0c479e81f0",
+    "patient_name": "Alfonso758 Ter\u00e1n294",
+    "question": "What medications is Alfonso758 Ter\u00e1n294 currently on?",
     "expected_answer_type": "medication_list",
     "expected": []
   },
   {
     "mode": "patient",
-    "patient_id": "6bd54944-c9ac-662a-098a-749b0998fcfd",
-    "patient_name": "Dante562 Zulauf375",
-    "question": "What conditions has Dante562 Zulauf375 been diagnosed with?",
+    "patient_id": "ee4756e8-09fb-f7be-f6a4-0c0c479e81f0",
+    "patient_name": "Alfonso758 Ter\u00e1n294",
+    "question": "What conditions has Alfonso758 Ter\u00e1n294 been diagnosed with?",
     "expected_answer_type": "condition_list",
     "expected": [
-      "Medication review due (situation)",
-      "Viral sinusitis (disorder)"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "b19fdbff-441d-d761-032a-a79644788486",
-    "patient_name": "Miguel815 Barreto785",
-    "question": "What medications is Miguel815 Barreto785 currently on?",
-    "expected_answer_type": "medication_list",
-    "expected": []
-  },
-  {
-    "mode": "patient",
-    "patient_id": "b19fdbff-441d-d761-032a-a79644788486",
-    "patient_name": "Miguel815 Barreto785",
-    "question": "What conditions has Miguel815 Barreto785 been diagnosed with?",
-    "expected_answer_type": "condition_list",
-    "expected": [
-      "Gingival disease (disorder)",
-      "Gingivitis (disorder)",
-      "Medication review due (situation)",
-      "Risk activity involvement (finding)",
-      "Sprain (morphologic abnormality)",
-      "Sprain of ankle (disorder)"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "e7ca092a-5150-dd00-359d-f5bfb54bd50a",
-    "patient_name": "Oswaldo857 Ferry570",
-    "question": "What medications is Oswaldo857 Ferry570 currently on?",
-    "expected_answer_type": "medication_list",
-    "expected": [
-      "Simvastatin 10 MG Oral Tablet"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "e7ca092a-5150-dd00-359d-f5bfb54bd50a",
-    "patient_name": "Oswaldo857 Ferry570",
-    "question": "What conditions has Oswaldo857 Ferry570 been diagnosed with?",
-    "expected_answer_type": "condition_list",
-    "expected": [
-      "Acute bronchitis (disorder)",
-      "Gingivitis (disorder)",
-      "Limited social contact (finding)",
-      "Medication review due (situation)",
-      "Overdose (disorder)",
-      "Severe anxiety (panic) (finding)",
-      "Social isolation (finding)",
-      "Stress (finding)",
-      "Victim of intimate partner abuse (finding)"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "2e1349b6-7a7b-c587-9186-1717b36fe32e",
-    "patient_name": "Miguel \u00c1ngel46 Quesada500",
-    "question": "What medications is Miguel \u00c1ngel46 Quesada500 currently on?",
-    "expected_answer_type": "medication_list",
-    "expected": []
-  },
-  {
-    "mode": "patient",
-    "patient_id": "2e1349b6-7a7b-c587-9186-1717b36fe32e",
-    "patient_name": "Miguel \u00c1ngel46 Quesada500",
-    "question": "What conditions has Miguel \u00c1ngel46 Quesada500 been diagnosed with?",
-    "expected_answer_type": "condition_list",
-    "expected": [
-      "Stress (finding)"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "0a9943e7-ae7f-d3ab-57af-21b9bd3dc510",
-    "patient_name": "Delphia725 Schuster709",
-    "question": "What medications is Delphia725 Schuster709 currently on?",
-    "expected_answer_type": "medication_list",
-    "expected": [
-      "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
-      "Alendronic acid 10 MG Oral Tablet",
-      "albuterol 5 MG/ML Inhalation Solution"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "0a9943e7-ae7f-d3ab-57af-21b9bd3dc510",
-    "patient_name": "Delphia725 Schuster709",
-    "question": "What conditions has Delphia725 Schuster709 been diagnosed with?",
-    "expected_answer_type": "condition_list",
-    "expected": [
-      "Full-time employment (finding)",
-      "Gingival disease (disorder)",
-      "Gingivitis (disorder)",
-      "Medication review due (situation)",
-      "Osteoporosis (disorder)",
-      "Part-time employment (finding)",
-      "Pulmonary emphysema (disorder)",
-      "Social isolation (finding)",
-      "Stress (finding)"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "d8917b22-e8da-83bf-5cd6-54b1938152f6",
-    "patient_name": "Markus389 Gerlach374",
-    "question": "What medications is Markus389 Gerlach374 currently on?",
-    "expected_answer_type": "medication_list",
-    "expected": [
-      "120 ACTUAT fluticasone propionate 0.044 MG/ACTUAT Metered Dose Inhaler [Flovent]",
-      "albuterol 0.21 MG/ML Inhalation Solution"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "d8917b22-e8da-83bf-5cd6-54b1938152f6",
-    "patient_name": "Markus389 Gerlach374",
-    "question": "What conditions has Markus389 Gerlach374 been diagnosed with?",
-    "expected_answer_type": "condition_list",
-    "expected": [
-      "Acute bronchitis (disorder)",
       "Acute viral pharyngitis (disorder)",
-      "Fracture of bone (disorder)",
-      "Fracture of clavicle (disorder)",
-      "Gingival disease (disorder)",
-      "Medication review due (situation)",
-      "Primary dental caries (disorder)"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "13d9e121-b982-d120-8371-65a874f1d3c1",
-    "patient_name": "Antony83 Koch169",
-    "question": "What medications is Antony83 Koch169 currently on?",
-    "expected_answer_type": "medication_list",
-    "expected": []
-  },
-  {
-    "mode": "patient",
-    "patient_id": "13d9e121-b982-d120-8371-65a874f1d3c1",
-    "patient_name": "Antony83 Koch169",
-    "question": "What conditions has Antony83 Koch169 been diagnosed with?",
-    "expected_answer_type": "condition_list",
-    "expected": [
-      "Acute bronchitis (disorder)",
-      "Fracture of ankle (disorder)",
-      "Fracture of bone (disorder)",
       "Medication review due (situation)",
       "Otitis media (disorder)",
       "Viral sinusitis (disorder)"
@@ -169,92 +22,266 @@
   },
   {
     "mode": "patient",
-    "patient_id": "5dd35134-9894-82d6-3150-3c3bcdd2c9ae",
-    "patient_name": "Kimberley248 Senger904",
-    "question": "What medications is Kimberley248 Senger904 currently on?",
+    "patient_id": "6ae9aef0-43eb-80e2-8393-31814f9a52e9",
+    "patient_name": "Nelly786 Renner328",
+    "question": "What medications is Nelly786 Renner328 currently on?",
     "expected_answer_type": "medication_list",
     "expected": [
-      "Ibuprofen 400 MG Oral Tablet [Ibu]",
-      "{28 (norethindrone 0.35 MG Oral Tablet) } Pack [Camila 28 Day]"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "5dd35134-9894-82d6-3150-3c3bcdd2c9ae",
-    "patient_name": "Kimberley248 Senger904",
-    "question": "What conditions has Kimberley248 Senger904 been diagnosed with?",
-    "expected_answer_type": "condition_list",
-    "expected": [
-      "Acute bronchitis (disorder)",
-      "Acute viral pharyngitis (disorder)",
-      "Blighted ovum (disorder)",
-      "Full-time employment (finding)",
-      "Gingivitis (disorder)",
-      "Medication review due (situation)",
-      "Miscarriage in first trimester (disorder)",
-      "Normal pregnancy (finding)",
-      "Part-time employment (finding)",
-      "Primary dental caries (disorder)",
-      "Social isolation (finding)",
-      "Stress (finding)"
-    ]
-  },
-  {
-    "mode": "patient",
-    "patient_id": "fc20152b-028d-4386-0f2e-959995b2c2ca",
-    "patient_name": "Tandra334 Bayer639",
-    "question": "What medications is Tandra334 Bayer639 currently on?",
-    "expected_answer_type": "medication_list",
-    "expected": [
-      "Alendronic acid 10 MG Oral Tablet",
-      "Galantamine 4 MG Oral Tablet",
-      "Simvastatin 10 MG Oral Tablet",
+      "Hydrochlorothiazide 25 MG Oral Tablet",
+      "amLODIPine 2.5 MG Oral Tablet",
       "lisinopril 10 MG Oral Tablet"
     ]
   },
   {
     "mode": "patient",
-    "patient_id": "fc20152b-028d-4386-0f2e-959995b2c2ca",
-    "patient_name": "Tandra334 Bayer639",
-    "question": "What conditions has Tandra334 Bayer639 been diagnosed with?",
+    "patient_id": "6ae9aef0-43eb-80e2-8393-31814f9a52e9",
+    "patient_name": "Nelly786 Renner328",
+    "question": "What conditions has Nelly786 Renner328 been diagnosed with?",
     "expected_answer_type": "condition_list",
     "expected": [
-      "Alzheimer's disease (disorder)",
-      "Chronic kidney disease stage 1 (disorder)",
       "Chronic kidney disease stage 2 (disorder)",
-      "Disorder of kidney due to diabetes mellitus (disorder)",
+      "Fracture of bone (disorder)",
+      "Fracture of forearm (disorder)",
       "Full-time employment (finding)",
-      "Gingival disease (disorder)",
       "Gingivitis (disorder)",
+      "Injury of neck (disorder)",
       "Medication review due (situation)",
       "Microalbuminuria due to type 2 diabetes mellitus (disorder)",
       "Not in labor force (finding)",
       "Part-time employment (finding)",
-      "Primary dental caries (disorder)",
-      "Reports of violence in the environment (finding)",
       "Stress (finding)",
-      "Victim of intimate partner abuse (finding)"
+      "Victim of intimate partner abuse (finding)",
+      "Viral sinusitis (disorder)",
+      "Whiplash injury to neck (disorder)"
     ]
   },
   {
     "mode": "patient",
-    "patient_id": "439c4ecd-f345-f209-ffd6-67bab89bfdb0",
-    "patient_name": "Ad\u00e1n600 Tamayo777",
-    "question": "What medications is Ad\u00e1n600 Tamayo777 currently on?",
+    "patient_id": "8e402592-bd71-991e-66a9-d8782b229bbd",
+    "patient_name": "Glennie916 Dach178",
+    "question": "What medications is Glennie916 Dach178 currently on?",
+    "expected_answer_type": "medication_list",
+    "expected": [
+      "Hydrochlorothiazide 25 MG Oral Tablet"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "8e402592-bd71-991e-66a9-d8782b229bbd",
+    "patient_name": "Glennie916 Dach178",
+    "question": "What conditions has Glennie916 Dach178 been diagnosed with?",
+    "expected_answer_type": "condition_list",
+    "expected": [
+      "Acute viral pharyngitis (disorder)",
+      "Full-time employment (finding)",
+      "Limited social contact (finding)",
+      "Medication review due (situation)",
+      "Not in labor force (finding)",
+      "Social isolation (finding)",
+      "Stress (finding)",
+      "Viral sinusitis (disorder)"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "3510e7c6-237f-d9b5-d0f6-75771d27ee31",
+    "patient_name": "Lilian665 Barton704",
+    "question": "What medications is Lilian665 Barton704 currently on?",
+    "expected_answer_type": "medication_list",
+    "expected": [
+      "120 ACTUAT fluticasone propionate 0.044 MG/ACTUAT Metered Dose Inhaler [Flovent]",
+      "NDA021457 200 ACTUAT albuterol 0.09 MG/ACTUAT Metered Dose Inhaler [ProAir]"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "3510e7c6-237f-d9b5-d0f6-75771d27ee31",
+    "patient_name": "Lilian665 Barton704",
+    "question": "What conditions has Lilian665 Barton704 been diagnosed with?",
+    "expected_answer_type": "condition_list",
+    "expected": [
+      "Acute bronchitis (disorder)",
+      "Acute viral pharyngitis (disorder)",
+      "Body mass index 30+ - obesity (finding)",
+      "Full-time employment (finding)",
+      "Gingival disease (disorder)",
+      "Gingivitis (disorder)",
+      "Limited social contact (finding)",
+      "Medication review due (situation)",
+      "Normal pregnancy (finding)",
+      "Not in labor force (finding)",
+      "Part-time employment (finding)",
+      "Primary dental caries (disorder)",
+      "Reports of violence in the environment (finding)",
+      "Severe anxiety (panic) (finding)",
+      "Social isolation (finding)",
+      "Stress (finding)",
+      "Unemployed (finding)"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "244f5689-e882-560e-0cc5-60469800220b",
+    "patient_name": "Josette398 Rohan584",
+    "question": "What medications is Josette398 Rohan584 currently on?",
     "expected_answer_type": "medication_list",
     "expected": []
   },
   {
     "mode": "patient",
-    "patient_id": "439c4ecd-f345-f209-ffd6-67bab89bfdb0",
-    "patient_name": "Ad\u00e1n600 Tamayo777",
-    "question": "What conditions has Ad\u00e1n600 Tamayo777 been diagnosed with?",
+    "patient_id": "244f5689-e882-560e-0cc5-60469800220b",
+    "patient_name": "Josette398 Rohan584",
+    "question": "What conditions has Josette398 Rohan584 been diagnosed with?",
     "expected_answer_type": "condition_list",
     "expected": [
       "Acute viral pharyngitis (disorder)",
+      "Full-time employment (finding)",
+      "Gingival disease (disorder)",
+      "Gingivitis (disorder)",
+      "Limited social contact (finding)",
       "Medication review due (situation)",
-      "Streptococcal sore throat (disorder)",
+      "Part-time employment (finding)",
+      "Reports of violence in the environment (finding)",
+      "Stress (finding)",
+      "Unhealthy alcohol drinking behavior (finding)"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "1cf52a1b-318f-d9e1-d19a-d4ab80288623",
+    "patient_name": "Windy313 Rowe323",
+    "question": "What medications is Windy313 Rowe323 currently on?",
+    "expected_answer_type": "medication_list",
+    "expected": []
+  },
+  {
+    "mode": "patient",
+    "patient_id": "1cf52a1b-318f-d9e1-d19a-d4ab80288623",
+    "patient_name": "Windy313 Rowe323",
+    "question": "What conditions has Windy313 Rowe323 been diagnosed with?",
+    "expected_answer_type": "condition_list",
+    "expected": [
+      "Gingivitis (disorder)",
+      "Laceration - injury (disorder)",
+      "Laceration of foot (disorder)",
+      "Medication review due (situation)",
+      "Otitis media (disorder)"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "de73e575-898e-b5a8-3983-9df9ef3192dc",
+    "patient_name": "Seema671 Corwin846",
+    "question": "What medications is Seema671 Corwin846 currently on?",
+    "expected_answer_type": "medication_list",
+    "expected": []
+  },
+  {
+    "mode": "patient",
+    "patient_id": "de73e575-898e-b5a8-3983-9df9ef3192dc",
+    "patient_name": "Seema671 Corwin846",
+    "question": "What conditions has Seema671 Corwin846 been diagnosed with?",
+    "expected_answer_type": "condition_list",
+    "expected": [
+      "Acute bronchitis (disorder)",
+      "Acute viral pharyngitis (disorder)",
+      "Gingival disease (disorder)",
+      "Medication review due (situation)",
+      "Streptococcal sore throat (disorder)"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "22dd0d8a-e100-0a3f-6572-e653a4a8e82e",
+    "patient_name": "Daria61 Jones311",
+    "question": "What medications is Daria61 Jones311 currently on?",
+    "expected_answer_type": "medication_list",
+    "expected": [
+      "Hydrochlorothiazide 25 MG Oral Tablet",
+      "amLODIPine 2.5 MG Oral Tablet"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "22dd0d8a-e100-0a3f-6572-e653a4a8e82e",
+    "patient_name": "Daria61 Jones311",
+    "question": "What conditions has Daria61 Jones311 been diagnosed with?",
+    "expected_answer_type": "condition_list",
+    "expected": [
+      "Burn injury (morphologic abnormality)",
+      "Essential hypertension (disorder)",
+      "Full-time employment (finding)",
+      "Gingivitis (disorder)",
+      "Medication review due (situation)",
+      "Metabolic syndrome X (disorder)",
+      "Normal pregnancy (finding)",
+      "Not in labor force (finding)",
+      "Partial thickness burn (disorder)",
+      "Stress (finding)",
+      "Unhealthy alcohol drinking behavior (finding)",
+      "Victim of intimate partner abuse (finding)",
       "Viral sinusitis (disorder)"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "d40cb731-72e0-1f02-562b-2ef401b9db50",
+    "patient_name": "Jeremy766 Johnson679",
+    "question": "What medications is Jeremy766 Johnson679 currently on?",
+    "expected_answer_type": "medication_list",
+    "expected": []
+  },
+  {
+    "mode": "patient",
+    "patient_id": "d40cb731-72e0-1f02-562b-2ef401b9db50",
+    "patient_name": "Jeremy766 Johnson679",
+    "question": "What conditions has Jeremy766 Johnson679 been diagnosed with?",
+    "expected_answer_type": "condition_list",
+    "expected": [
+      "Acute viral pharyngitis (disorder)",
+      "Limited social contact (finding)",
+      "Medication review due (situation)",
+      "Not in labor force (finding)",
+      "Otitis media (disorder)",
+      "Received higher education (finding)",
+      "Stress (finding)",
+      "Viral sinusitis (disorder)"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "dac69499-5748-c726-7236-d519167eedc2",
+    "patient_name": "Danae973 Brown30",
+    "question": "What medications is Danae973 Brown30 currently on?",
+    "expected_answer_type": "medication_list",
+    "expected": [
+      "120 ACTUAT fluticasone propionate 0.11 MG/ACTUAT Metered Dose Inhaler [Flovent]",
+      "21 DAY ethinyl estradiol 0.000625 MG/HR / etonogestrel 0.005 MG/HR Vaginal System [NuvaRing]",
+      "Hydrocortisone 10 MG/ML Topical Cream",
+      "NDA020800 0.3 ML Epinephrine 1 MG/ML Auto-Injector",
+      "albuterol 0.83 MG/ML Inhalation Solution",
+      "cetirizine hydrochloride 10 MG Oral Tablet"
+    ]
+  },
+  {
+    "mode": "patient",
+    "patient_id": "dac69499-5748-c726-7236-d519167eedc2",
+    "patient_name": "Danae973 Brown30",
+    "question": "What conditions has Danae973 Brown30 been diagnosed with?",
+    "expected_answer_type": "condition_list",
+    "expected": [
+      "Contact dermatitis (disorder)",
+      "Full-time employment (finding)",
+      "Gingival disease (disorder)",
+      "Gingivitis (disorder)",
+      "Leaking dental filling (finding)",
+      "Limited social contact (finding)",
+      "Medication review due (situation)",
+      "Normal pregnancy (finding)",
+      "Part-time employment (finding)",
+      "Social isolation (finding)",
+      "Stress (finding)",
+      "Unemployed (finding)"
     ]
   },
   {
@@ -262,8 +289,8 @@
     "question": "How many patients have Gingival disease?",
     "expected_answer_type": "count",
     "expected": {
-      "n": 286,
-      "total": 1000
+      "n": 25,
+      "total": 100
     }
   },
   {
@@ -271,9 +298,9 @@
     "question": "What percentage of patients have Gingival disease?",
     "expected_answer_type": "percentage",
     "expected": {
-      "n": 286,
-      "total": 1000,
-      "percentage": 28.6
+      "n": 25,
+      "total": 100,
+      "percentage": 25.0
     }
   },
   {
@@ -281,8 +308,8 @@
     "question": "How many patients have Stress?",
     "expected_answer_type": "count",
     "expected": {
-      "n": 648,
-      "total": 1000
+      "n": 64,
+      "total": 100
     }
   },
   {
@@ -290,9 +317,9 @@
     "question": "What percentage of patients have Stress?",
     "expected_answer_type": "percentage",
     "expected": {
-      "n": 648,
-      "total": 1000,
-      "percentage": 64.8
+      "n": 64,
+      "total": 100,
+      "percentage": 64.0
     }
   },
   {
@@ -300,8 +327,8 @@
     "question": "How many patients have Medication review due?",
     "expected_answer_type": "count",
     "expected": {
-      "n": 917,
-      "total": 1000
+      "n": 87,
+      "total": 100
     }
   },
   {
@@ -309,9 +336,9 @@
     "question": "What percentage of patients have Medication review due?",
     "expected_answer_type": "percentage",
     "expected": {
-      "n": 917,
-      "total": 1000,
-      "percentage": 91.7
+      "n": 87,
+      "total": 100,
+      "percentage": 87.0
     }
   },
   {
@@ -319,8 +346,8 @@
     "question": "How many patients have Primary dental caries?",
     "expected_answer_type": "count",
     "expected": {
-      "n": 230,
-      "total": 1000
+      "n": 23,
+      "total": 100
     }
   },
   {
@@ -328,8 +355,8 @@
     "question": "What percentage of patients have Primary dental caries?",
     "expected_answer_type": "percentage",
     "expected": {
-      "n": 230,
-      "total": 1000,
+      "n": 23,
+      "total": 100,
       "percentage": 23.0
     }
   },
@@ -338,8 +365,8 @@
     "question": "How many patients have Part-time employment?",
     "expected_answer_type": "count",
     "expected": {
-      "n": 448,
-      "total": 1000
+      "n": 46,
+      "total": 100
     }
   },
   {
@@ -347,47 +374,9 @@
     "question": "What percentage of patients have Part-time employment?",
     "expected_answer_type": "percentage",
     "expected": {
-      "n": 448,
-      "total": 1000,
-      "percentage": 44.8
-    }
-  },
-  {
-    "mode": "population",
-    "question": "How many patients have Full-time employment?",
-    "expected_answer_type": "count",
-    "expected": {
-      "n": 609,
-      "total": 1000
-    }
-  },
-  {
-    "mode": "population",
-    "question": "What percentage of patients have Full-time employment?",
-    "expected_answer_type": "percentage",
-    "expected": {
-      "n": 609,
-      "total": 1000,
-      "percentage": 60.9
-    }
-  },
-  {
-    "mode": "population",
-    "question": "How many patients have Limited social contact?",
-    "expected_answer_type": "count",
-    "expected": {
-      "n": 287,
-      "total": 1000
-    }
-  },
-  {
-    "mode": "population",
-    "question": "What percentage of patients have Limited social contact?",
-    "expected_answer_type": "percentage",
-    "expected": {
-      "n": 287,
-      "total": 1000,
-      "percentage": 28.7
+      "n": 46,
+      "total": 100,
+      "percentage": 46.0
     }
   },
   {
@@ -395,8 +384,8 @@
     "question": "How many patients have Gingivitis?",
     "expected_answer_type": "count",
     "expected": {
-      "n": 620,
-      "total": 1000
+      "n": 54,
+      "total": 100
     }
   },
   {
@@ -404,9 +393,47 @@
     "question": "What percentage of patients have Gingivitis?",
     "expected_answer_type": "percentage",
     "expected": {
-      "n": 620,
-      "total": 1000,
-      "percentage": 62.0
+      "n": 54,
+      "total": 100,
+      "percentage": 54.0
+    }
+  },
+  {
+    "mode": "population",
+    "question": "How many patients have Acute viral pharyngitis?",
+    "expected_answer_type": "count",
+    "expected": {
+      "n": 27,
+      "total": 100
+    }
+  },
+  {
+    "mode": "population",
+    "question": "What percentage of patients have Acute viral pharyngitis?",
+    "expected_answer_type": "percentage",
+    "expected": {
+      "n": 27,
+      "total": 100,
+      "percentage": 27.0
+    }
+  },
+  {
+    "mode": "population",
+    "question": "How many patients have Full-time employment?",
+    "expected_answer_type": "count",
+    "expected": {
+      "n": 60,
+      "total": 100
+    }
+  },
+  {
+    "mode": "population",
+    "question": "What percentage of patients have Full-time employment?",
+    "expected_answer_type": "percentage",
+    "expected": {
+      "n": 60,
+      "total": 100,
+      "percentage": 60.0
     }
   },
   {
@@ -414,8 +441,8 @@
     "question": "How many patients have Viral sinusitis?",
     "expected_answer_type": "count",
     "expected": {
-      "n": 399,
-      "total": 1000
+      "n": 39,
+      "total": 100
     }
   },
   {
@@ -423,28 +450,28 @@
     "question": "What percentage of patients have Viral sinusitis?",
     "expected_answer_type": "percentage",
     "expected": {
-      "n": 399,
-      "total": 1000,
-      "percentage": 39.9
+      "n": 39,
+      "total": 100,
+      "percentage": 39.0
     }
   },
   {
     "mode": "population",
-    "question": "How many patients have Acute bronchitis?",
+    "question": "How many patients have Unemployed?",
     "expected_answer_type": "count",
     "expected": {
-      "n": 222,
-      "total": 1000
+      "n": 20,
+      "total": 100
     }
   },
   {
     "mode": "population",
-    "question": "What percentage of patients have Acute bronchitis?",
+    "question": "What percentage of patients have Unemployed?",
     "expected_answer_type": "percentage",
     "expected": {
-      "n": 222,
-      "total": 1000,
-      "percentage": 22.2
+      "n": 20,
+      "total": 100,
+      "percentage": 20.0
     }
   }
 ]

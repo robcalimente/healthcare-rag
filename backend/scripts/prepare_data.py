@@ -7,6 +7,7 @@ Run once after generating Synthea data, before build_index.py.
 """
 import csv
 import json
+import random
 import re
 import sqlite3
 from datetime import datetime, timedelta
@@ -18,6 +19,12 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 YEARS_OF_HISTORY = 5
 CUTOFF = datetime.utcnow() - timedelta(days=365 * YEARS_OF_HISTORY)
+
+# Free-tier RAM budget (Render's 512MB) can't fit the full 1000-patient corpus
+# resident alongside torch/sentence-transformers' own baseline footprint --
+# capped here rather than gambling on being right at the memory edge.
+PATIENT_SAMPLE_SIZE = 100
+SAMPLE_SEED = 42
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -102,20 +109,22 @@ def build_sqlite(patients, conditions, medications, encounters):
     print(f"wrote {db_path}")
 
 
-def iter_observations_recent():
+def iter_observations_recent(patient_ids):
     """Stream observations.csv, yield only rows within the cutoff (file is 135MB)."""
     with open(RAW / "csv" / "observations.csv", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
+            if row["PATIENT"] not in patient_ids:
+                continue
             d = parse_date(row["DATE"])
             if d and d >= CUTOFF:
                 yield row
 
 
-def build_observation_chunks():
+def build_observation_chunks(patient_ids):
     """One chunk per (patient, encounter) summarizing that visit's labs/vitals."""
     panels = {}
-    for row in iter_observations_recent():
+    for row in iter_observations_recent(patient_ids):
         key = (row["PATIENT"], row["ENCOUNTER"])
         panels.setdefault(key, {"date": row["DATE"][:10], "items": []})
         val = row["VALUE"]
@@ -135,7 +144,7 @@ def build_observation_chunks():
     return chunks
 
 
-def build_note_chunks():
+def build_note_chunks(patient_ids):
     chunks = []
     for path in (RAW / "notes").glob("*.txt"):
         # filename: First_Last_<uuid>.txt -- patient id is the uuid
@@ -143,6 +152,8 @@ def build_note_chunks():
         if not m:
             continue
         patient_id = m.group(1)
+        if patient_id not in patient_ids:
+            continue
         text = path.read_text(encoding="utf-8")
 
         lines = text.split("\n")
@@ -177,10 +188,17 @@ def build_note_chunks():
 def main():
     print(f"cutoff date: {CUTOFF.date()} (last {YEARS_OF_HISTORY} years)")
 
-    patients = load_csv("patients.csv")
-    conditions = [c for c in load_csv("conditions.csv") if (parse_date(c["START"]) or CUTOFF) >= CUTOFF]
-    medications = [m for m in load_csv("medications.csv") if (parse_date(m["START"]) or CUTOFF) >= CUTOFF]
-    encounters = [e for e in load_csv("encounters.csv") if (parse_date(e["START"]) or CUTOFF) >= CUTOFF]
+    all_patients = load_csv("patients.csv")
+    living = [p for p in all_patients if not p["DEATHDATE"]]
+    random.Random(SAMPLE_SEED).shuffle(living)
+    sampled = living[:PATIENT_SAMPLE_SIZE]
+    patient_ids = {p["Id"] for p in sampled}
+    print(f"sampled {len(sampled)} of {len(living)} living patients (seed={SAMPLE_SEED})")
+
+    patients = [p for p in all_patients if p["Id"] in patient_ids]
+    conditions = [c for c in load_csv("conditions.csv") if c["PATIENT"] in patient_ids and (parse_date(c["START"]) or CUTOFF) >= CUTOFF]
+    medications = [m for m in load_csv("medications.csv") if m["PATIENT"] in patient_ids and (parse_date(m["START"]) or CUTOFF) >= CUTOFF]
+    encounters = [e for e in load_csv("encounters.csv") if e["PATIENT"] in patient_ids and (parse_date(e["START"]) or CUTOFF) >= CUTOFF]
     print(f"patients={len(patients)} conditions={len(conditions)} medications={len(medications)} encounters={len(encounters)}")
 
     build_sqlite(patients, conditions, medications, encounters)
@@ -211,11 +229,11 @@ def main():
             "text": f"{e['ENCOUNTERCLASS'].title()} encounter on {e['START'][:10]}: {e['DESCRIPTION']}" + (f", reason: {e['REASONDESCRIPTION']}" if e["REASONDESCRIPTION"] else ""),
         })
 
-    obs_chunks = build_observation_chunks()
+    obs_chunks = build_observation_chunks(patient_ids)
     print(f"observation panel chunks: {len(obs_chunks)}")
     chunks.extend(obs_chunks)
 
-    note_chunks = build_note_chunks()
+    note_chunks = build_note_chunks(patient_ids)
     print(f"clinical note chunks: {len(note_chunks)}")
     chunks.extend(note_chunks)
 
