@@ -3,14 +3,14 @@ from functools import lru_cache
 from typing import Optional
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 
 from app.config import EMBEDDING_MODEL, INDEX_DIR, TOP_K
 
 
 @lru_cache(maxsize=1)
 def _model():
-    return SentenceTransformer(EMBEDDING_MODEL)
+    return TextEmbedding(model_name=EMBEDDING_MODEL)
 
 
 @lru_cache(maxsize=1)
@@ -57,7 +57,10 @@ def _fetch_chunk_rows(row_indices: list[int]) -> dict[int, dict]:
 
 
 def _embed_query(question: str) -> np.ndarray:
-    vec = _model().encode([question], normalize_embeddings=True)[0]
+    # query_embed applies the model's recommended query-side instruction prefix
+    # (BGE models are trained to expect this on queries, not on indexed documents)
+    vec = next(_model().query_embed([question]))
+    vec = vec / np.linalg.norm(vec)
     return vec.astype("float32")
 
 

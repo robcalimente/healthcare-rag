@@ -8,18 +8,22 @@ Embeds chunks.jsonl (produced by prepare_data.py) and persists:
                                  stays on disk and is fetched only for the ~15-25
                                  results actually returned per query.
 
-Earlier version kept a Python list of 92k dicts (with full text) in memory at
-runtime alongside the embeddings matrix -- that's what blew past Render free tier's
-512MB RAM limit on first deploy. Text doesn't need to be in RAM for search; only
-retrieved results need it, and SQLite with an index on patient_id serves that
-cheaply without holding the whole corpus resident.
+Earlier versions used sentence-transformers (PyTorch-backed) for embeddings. That
+worked locally but its baseline memory footprint (PyTorch import + model, several
+hundred MB) turned out to exceed Render free tier's 512MB limit on its own, before
+even accounting for the corpus data -- confirmed by the app still OOMing after the
+corpus-side fixes below (SQLite text storage, float16, 100-patient sample) brought
+the data footprint down to a few MB. Switched to fastembed (ONNX Runtime, no
+PyTorch) for a much lighter runtime dependency.
 """
 import json
 import sqlite3
 from pathlib import Path
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
+
+EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 
 ROOT = Path(__file__).resolve().parents[2]
 CHUNKS_PATH = ROOT / "data" / "processed" / "chunks.jsonl"
@@ -41,14 +45,29 @@ def main():
     if len(ids) != len(set(ids)):
         raise ValueError("duplicate chunk ids found -- rerun prepare_data.py")
 
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    dim = model.get_sentence_embedding_dimension()
+    model = TextEmbedding(model_name=EMBEDDING_MODEL_NAME)
+    dim = 384
+
+    # BGE-small's max sequence length is 512 tokens (~2000 chars). Some clinical
+    # note chunks run past 9000 chars -- without truncation, batching a few very
+    # long texts with many short ones blows up attention cost quadratically with
+    # the longest sequence in the batch, which is what caused build_index.py to
+    # spike to several GB of RAM and stall. Embedding quality doesn't need the
+    # full text anyway; the semantic gist is captured well within this cap.
+    EMBED_TEXT_MAX_CHARS = 1000
 
     all_embeddings = np.zeros((len(chunks), dim), dtype="float32")
     for i in range(0, len(chunks), BATCH_SIZE):
         batch = chunks[i : i + BATCH_SIZE]
-        texts = [c["text"] for c in batch]
-        emb = model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
+        texts = [c["text"][:EMBED_TEXT_MAX_CHARS] for c in batch]
+        # parallel=1 disables fastembed's automatic multiprocessing, which
+        # otherwise spawns extra worker processes -- each loading its own full
+        # copy of the ONNX model -- and was the actual cause of multi-GB memory
+        # growth during indexing (not the text length, though that's capped too)
+        emb = np.array(list(model.embed(texts, parallel=1)))
+        # normalize explicitly -- don't rely on the model's own output already
+        # being unit-length, since retrieve() treats dot product as cosine similarity
+        emb = emb / np.linalg.norm(emb, axis=1, keepdims=True)
         all_embeddings[i : i + len(batch)] = emb
         if (i // BATCH_SIZE) % 20 == 0:
             print(f"embedded {min(i + BATCH_SIZE, len(chunks))}/{len(chunks)}")
