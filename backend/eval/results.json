@@ -1,0 +1,956 @@
+[
+  {
+    "question": "What medications is Dante562 Zulauf375 currently on?",
+    "mode": "patient",
+    "expected": [],
+    "expected_answer_type": "medication_list",
+    "model_answer": "There are no [medication] records in the provided context.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": true
+  },
+  {
+    "question": "What conditions has Dante562 Zulauf375 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Medication review due (situation)",
+      "Viral sinusitis (disorder)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the provided context records, Dante562 has been diagnosed with the following conditions:\n\n1. Medication review due (situation) - diagnosed on 2024-06-13, 2024-07-18, 2025-05-22, 2025-11-20, and 2026-05-21.\n2. Viral sinusitis (disorder) - diagnosed on 2025-05-22 and 2025-11-20.\n\nNote that the other conditions mentioned in the clinical notes (e.g. swollen lymph nodes, fatigue, sore throat, etc.) are symptoms or complaints, not diagnoses.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": true
+  },
+  {
+    "question": "What medications is Miguel815 Barreto785 currently on?",
+    "mode": "patient",
+    "expected": [],
+    "expected_answer_type": "medication_list",
+    "model_answer": "Based on the provided [medication] records, Miguel815 Barreto785 is currently not on any medications as there are no active medications listed. The only medications listed are:\n\n- Acetaminophen 325 MG Oral Tablet (started 2024-02-17, stopped 2024-03-17)\n- sodium fluoride 0.0272 MG/MG Oral Gel (started and stopped on multiple occasions: 2025-04-10, 2026-04-16)\n\nThere are no active medications listed in the [medication] records.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "medication",
+      "condition",
+      "observation_panel",
+      "observation_panel"
+    ],
+    "answer_correct": true
+  },
+  {
+    "question": "What conditions has Miguel815 Barreto785 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Gingival disease (disorder)",
+      "Gingivitis (disorder)",
+      "Medication review due (situation)",
+      "Risk activity involvement (finding)",
+      "Sprain (morphologic abnormality)",
+      "Sprain of ankle (disorder)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the provided context records, Miguel815 Barreto785 has been diagnosed with the following conditions:\n\n1. Gingival disease (disorder) - diagnosed on 2022-03-10 and resolved on 2025-04-10 (recorded in [condition] on 2025-04-10)\n2. Risk activity involvement (finding) - diagnosed on 2022-03-10 and resolved on 2025-03-27 (recorded in [condition] on 2025-03-27)\n3. Sinusitis (disorder) - ongoing (no resolution date mentioned in the provided records)\n4. Sprain (morphologic abnormality) - ongoing (no resolution date mentioned in the provided records)\n5. Sprain of ankle (disorder) - ongoing (no resolution date mentioned in the provided records)\n6. Gingivitis (disorder) - ongoing (no resolution date mentioned in the provided records)\n\nNote: The condition \"medication review due (situation)\" is not a diagnosis, but rather a situation that was ongoing at various points in time.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "observation_panel",
+      "observation_panel",
+      "observation_panel",
+      "observation_panel",
+      "clinical_note"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What medications is Oswaldo857 Ferry570 currently on?",
+    "mode": "patient",
+    "expected": [
+      "Simvastatin 10 MG Oral Tablet"
+    ],
+    "expected_answer_type": "medication_list",
+    "model_answer": "There are no [medication] records in the provided context.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What conditions has Oswaldo857 Ferry570 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Acute bronchitis (disorder)",
+      "Gingivitis (disorder)",
+      "Limited social contact (finding)",
+      "Medication review due (situation)",
+      "Overdose (disorder)",
+      "Severe anxiety (panic) (finding)",
+      "Social isolation (finding)",
+      "Stress (finding)",
+      "Victim of intimate partner abuse (finding)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the provided [condition] records, Oswaldo857 has been diagnosed with the following conditions:\n\n1. Medication review due (situation) - diagnosed on 2022-12-27, resolved 2023-01-03; diagnosed on 2023-08-22, resolved 2024-08-27; diagnosed on 2025-09-02, ongoing\n2. Stress (finding) - diagnosed on 2024-08-27, ongoing\n3. Limited social contact (finding) - diagnosed on 2024-08-27, ongoing\n4. Overdose (disorder) - diagnosed on 2022-12-27 (note: this is likely a typo and should be 2025-03-30, as the clinical note from 2022-12-27 does not mention this diagnosis); diagnosed on 2025-03-30, resolved 2025-03-30",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What medications is Miguel \u00c1ngel46 Quesada500 currently on?",
+    "mode": "patient",
+    "expected": [],
+    "expected_answer_type": "medication_list",
+    "model_answer": "There are no [medication] records for Miguel \u00c1ngel46 Quesada500 in the provided context.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "encounter",
+      "encounter",
+      "observation_panel",
+      "observation_panel",
+      "observation_panel"
+    ],
+    "answer_correct": true
+  },
+  {
+    "question": "What conditions has Miguel \u00c1ngel46 Quesada500 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Stress (finding)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "According to the [condition] record dated 2021-10-08, Miguel \u00c1ngel46 has been diagnosed with Stress (finding), ongoing.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "encounter",
+      "encounter",
+      "observation_panel",
+      "observation_panel",
+      "observation_panel"
+    ],
+    "answer_correct": true
+  },
+  {
+    "question": "What medications is Delphia725 Schuster709 currently on?",
+    "mode": "patient",
+    "expected": [
+      "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
+      "Alendronic acid 10 MG Oral Tablet",
+      "albuterol 5 MG/ML Inhalation Solution"
+    ],
+    "expected_answer_type": "medication_list",
+    "model_answer": "Based on the [medication] records, Delphia725 Meda165 is currently on:\n\n1. Alendronic acid 10 MG Oral Tablet (started 2026-06-02, for Osteoporosis)\n2. Albuterol 5 MG/ML Inhalation Solution (started 2026-06-02, for Pulmonary emphysema)\n\nRecord dates used: 2026-06-02.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "clinical_note",
+      "medication",
+      "medication",
+      "medication",
+      "medication"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What conditions has Delphia725 Schuster709 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Full-time employment (finding)",
+      "Gingival disease (disorder)",
+      "Gingivitis (disorder)",
+      "Medication review due (situation)",
+      "Osteoporosis (disorder)",
+      "Part-time employment (finding)",
+      "Pulmonary emphysema (disorder)",
+      "Social isolation (finding)",
+      "Stress (finding)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the provided context records, Delphia725 Meda165 has been diagnosed with the following conditions:\n\n1. Medication review due (situation) - diagnosed on 2023-05-16, resolved on 2026-06-02\n2. Stress (finding) - diagnosed on 2026-06-02, ongoing\n3. Social isolation (finding) - diagnosed on 2026-06-02, ongoing\n4. Gingival disease (disorder) - no specific diagnosis date found, but mentioned in multiple clinical notes\n5. Acute viral pharyngitis (disorder) - no specific diagnosis date found, but mentioned in multiple clinical notes\n6. Gingivitis (disorder) - no specific diagnosis date found, but mentioned in multiple clinical notes\n7. Part-time employment (finding) - diagnosed on 2024-05-21, resolved on 2025-05-27\n8. Full-time employment (finding) - diagnosed on 2025-05-27, ongoing",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What medications is Markus389 Gerlach374 currently on?",
+    "mode": "patient",
+    "expected": [
+      "120 ACTUAT fluticasone propionate 0.044 MG/ACTUAT Metered Dose Inhaler [Flovent]",
+      "albuterol 0.21 MG/ML Inhalation Solution"
+    ],
+    "expected_answer_type": "medication_list",
+    "model_answer": "Based on the [medication] records, Markus389 is currently on no medications as there are no active medications listed. The last medication, albuterol 0.21 MG/ML Inhalation Solution, was stopped on 2023-05-05.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What conditions has Markus389 Gerlach374 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Acute bronchitis (disorder)",
+      "Acute viral pharyngitis (disorder)",
+      "Fracture of bone (disorder)",
+      "Fracture of clavicle (disorder)",
+      "Gingival disease (disorder)",
+      "Medication review due (situation)",
+      "Primary dental caries (disorder)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the provided context records, Markus389 has been diagnosed with the following conditions:\n\n1. Gingival disease (resolved on 2023-05-12)\n2. Streptococcal sore throat (no resolution date provided)\n3. Acute bronchitis (resolved on 2026-02-19)\n4. Fracture of clavicle (no resolution date provided)\n5. Acute viral pharyngitis (resolved on 2023-05-05)\n6. Primary dental caries (no resolution date provided)\n7. Medication review due (situation, not a condition, but a status)\n\nRecord dates used: 2021-08-13, 2023-05-05, 2023-05-12, 2023-08-25, 2026-02-09, 2026-02-20.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "condition"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What medications is Antony83 Koch169 currently on?",
+    "mode": "patient",
+    "expected": [],
+    "expected_answer_type": "medication_list",
+    "model_answer": "There is no [medication] record for Antony83 Koch169.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "clinical_note"
+    ],
+    "answer_correct": true
+  },
+  {
+    "question": "What conditions has Antony83 Koch169 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Acute bronchitis (disorder)",
+      "Fracture of ankle (disorder)",
+      "Fracture of bone (disorder)",
+      "Medication review due (situation)",
+      "Otitis media (disorder)",
+      "Viral sinusitis (disorder)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the provided [condition] records, Antony83 has been diagnosed with the following conditions:\n\n1. Medication review due (situation) - diagnosed on 2023-08-26, 2023-09-30, 2024-05-11, 2024-05-11, 2024-11-02, 2025-02-01, 2025-08-02, and 2026-01-31.\n2. Acute bronchitis (disorder) - diagnosed on 2024-05-11, 2025-02-01, and 2026-01-06.\n3. Viral sinusitis (disorder) - diagnosed on 2024-05-11 and 2026-01-06.\n4. Fracture of ankle (disorder) - diagnosed on 2026-01-06.\n5. Fracture of bone (disorder) - diagnosed on 2026-01-06.\n\nNote that the [condition] records do not mention any other specific conditions, but the [clinical_note] records mention \"acute bronchitis (disorder)\" and \"viral sinusitis (disorder)\" in the context of the patient's history.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What medications is Kimberley248 Senger904 currently on?",
+    "mode": "patient",
+    "expected": [
+      "Ibuprofen 400 MG Oral Tablet [Ibu]",
+      "{28 (norethindrone 0.35 MG Oral Tablet) } Pack [Camila 28 Day]"
+    ],
+    "expected_answer_type": "medication_list",
+    "model_answer": "According to the [medication | 2026-04-24] record, Kimberley248 is currently taking Ibuprofen 400 MG Oral Tablet [Ibu].",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "medication",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What conditions has Kimberley248 Senger904 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Acute bronchitis (disorder)",
+      "Acute viral pharyngitis (disorder)",
+      "Blighted ovum (disorder)",
+      "Full-time employment (finding)",
+      "Gingivitis (disorder)",
+      "Medication review due (situation)",
+      "Miscarriage in first trimester (disorder)",
+      "Normal pregnancy (finding)",
+      "Part-time employment (finding)",
+      "Primary dental caries (disorder)",
+      "Social isolation (finding)",
+      "Stress (finding)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the [condition] records, Kimberley248 Senger904 has been diagnosed with:\n\n1. Stress (finding) - diagnosed on 2022-03-17 and resolved on 2022-03-31.\n2. Stress (finding) - diagnosed on 2025-04-17 and resolved on 2026-04-23.\n3. Medication review due (situation) - diagnosed on 2023-04-06 and resolved on 2023-04-06.\n4. Medication review due (situation) - diagnosed on 2023-04-13 and resolved on 2024-04-11.\n5. Medication review due (situation) - diagnosed on 2025-04-17 and resolved on 2025-04-17.\n6. Medication review due (situation) - diagnosed on 2026-04-23 and resolved on 2026-04-23.\n\nNote that the [clinical_note] records mention other conditions, but these are not explicitly stated as diagnoses in the [condition] records.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What medications is Tandra334 Bayer639 currently on?",
+    "mode": "patient",
+    "expected": [
+      "Alendronic acid 10 MG Oral Tablet",
+      "Galantamine 4 MG Oral Tablet",
+      "Simvastatin 10 MG Oral Tablet",
+      "lisinopril 10 MG Oral Tablet"
+    ],
+    "expected_answer_type": "medication_list",
+    "model_answer": "Based on the provided [medication] records, Tandra334 Stephani232 is currently taking:\n\n1. Alendronic acid 10 MG Oral Tablet (started 2026-08-03, for Osteoporosis)\n2. lisinopril 10 MG Oral Tablet (started 2026-08-03, for Essential hypertension)\n\nRecord dates used: 2026-08-03.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "medication",
+      "medication",
+      "medication",
+      "condition",
+      "condition",
+      "condition",
+      "medication",
+      "condition",
+      "medication",
+      "medication",
+      "clinical_note",
+      "medication",
+      "condition",
+      "clinical_note",
+      "medication"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What conditions has Tandra334 Bayer639 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Alzheimer's disease (disorder)",
+      "Chronic kidney disease stage 1 (disorder)",
+      "Chronic kidney disease stage 2 (disorder)",
+      "Disorder of kidney due to diabetes mellitus (disorder)",
+      "Full-time employment (finding)",
+      "Gingival disease (disorder)",
+      "Gingivitis (disorder)",
+      "Medication review due (situation)",
+      "Microalbuminuria due to type 2 diabetes mellitus (disorder)",
+      "Not in labor force (finding)",
+      "Part-time employment (finding)",
+      "Primary dental caries (disorder)",
+      "Reports of violence in the environment (finding)",
+      "Stress (finding)",
+      "Victim of intimate partner abuse (finding)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the provided context records, Tandra334 Stephani232 (not Bayer639, which is likely a typo) has been diagnosed with the following conditions:\n\n1. Stress (ongoing, diagnosed 2026-04-06)\n2. Medication review due (resolved on various dates, including 2026-07-27, 2026-03-23, 2026-06-22, 2026-08-03, 2026-03-30, 2026-03-02, 2025-11-24, and 2026-04-06)\n3. Situation (resolved on various dates, including 2026-07-27, 2026-03-23, 2026-06-22, 2026-08-03, 2026-03-30, 2026-03-02, 2025-11-24, and 2026-04-06)\n4. Severe anxiety (panic) (finding, no specific diagnosis date mentioned in the context records, but mentioned in the clinical notes as a history of severe anxiety)\n\nNote that the condition \"Medication review due\" and \"Situation\" are not typical medical conditions, but rather situations or findings mentioned in the context records.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "condition"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "What medications is Ad\u00e1n600 Tamayo777 currently on?",
+    "mode": "patient",
+    "expected": [],
+    "expected_answer_type": "medication_list",
+    "model_answer": "There is no [medication] record for Ad\u00e1n600 Tamayo777 that indicates current medications. The only [medication] record is for Penicillin V Potassium 250 MG Oral Tablet, which was stopped on 2023-01-04.",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "medication",
+      "condition",
+      "condition",
+      "observation_panel"
+    ],
+    "answer_correct": true
+  },
+  {
+    "question": "What conditions has Ad\u00e1n600 Tamayo777 been diagnosed with?",
+    "mode": "patient",
+    "expected": [
+      "Acute viral pharyngitis (disorder)",
+      "Medication review due (situation)",
+      "Streptococcal sore throat (disorder)",
+      "Viral sinusitis (disorder)"
+    ],
+    "expected_answer_type": "condition_list",
+    "model_answer": "Based on the provided context records, Ad\u00e1n600 Tamayo777 has been diagnosed with the following conditions:\n\n1. Medication review due (situation) - diagnosed 2021-11-21, resolved 2025-12-14 (recorded in [condition] on 2021-11-21 and 2025-12-14)\n2. Sprain (morphologic abnormality) - no specific diagnosis date found, but mentioned in multiple clinical notes\n3. Sprain of wrist (disorder) - no specific diagnosis date found, but mentioned in multiple clinical notes\n4. Otitis media (disorder) - no specific diagnosis date found, but mentioned in multiple clinical notes\n5. Streptococcal sore throat (disorder) - first mentioned in 2023-01-01 clinical note, but no specific diagnosis date found\n6. Viral sinusitis (disorder) - diagnosed 2025-04-16, resolved 2025-05-01 (recorded in [condition] on 2025-04-16)\n7. Acute viral pharyngitis (disorder) - diagnosed 2026-02-20, resolved 2026-02-28 (recorded in [condition] on 2026-02-20)",
+    "router_path": "vector",
+    "router_reason": "patient mode always uses scoped vector retrieval",
+    "router_path_correct": null,
+    "retrieved_record_types": [
+      "condition",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "clinical_note",
+      "condition",
+      "encounter",
+      "condition",
+      "encounter"
+    ],
+    "answer_correct": false
+  },
+  {
+    "question": "How many patients have Gingival disease?",
+    "mode": "population",
+    "expected": {
+      "n": 286,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "According to the records, 28.6% of patients have been diagnosed with Gingival disease.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Gingival disease (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Gingival disease?",
+    "mode": "population",
+    "expected": {
+      "n": 286,
+      "total": 1000,
+      "percentage": 28.6
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "According to the records, 28.6% of patients have Gingival disease.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Gingival disease (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Stress?",
+    "mode": "population",
+    "expected": {
+      "n": 648,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "648 patients have been diagnosed with Stress.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Stress (finding)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Stress?",
+    "mode": "population",
+    "expected": {
+      "n": 648,
+      "total": 1000,
+      "percentage": 64.8
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "According to the records, 64.8% of patients have been diagnosed with Stress.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Stress (finding)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Medication review due?",
+    "mode": "population",
+    "expected": {
+      "n": 917,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "According to the query result, 917 patients have a medication review due.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Medication review due (situation)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Medication review due?",
+    "mode": "population",
+    "expected": {
+      "n": 917,
+      "total": 1000,
+      "percentage": 91.7
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "According to the records, 91.7% of patients have a medication review due.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Medication review due (situation)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Primary dental caries?",
+    "mode": "population",
+    "expected": {
+      "n": 230,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "There are 230 patients with Primary dental caries.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Primary dental caries (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Primary dental caries?",
+    "mode": "population",
+    "expected": {
+      "n": 230,
+      "total": 1000,
+      "percentage": 23.0
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "23% of patients have Primary dental caries.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Primary dental caries (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Part-time employment?",
+    "mode": "population",
+    "expected": {
+      "n": 448,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "According to the employment information, 44.8% of patients have Part-time employment.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Part-time employment (finding)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Part-time employment?",
+    "mode": "population",
+    "expected": {
+      "n": 448,
+      "total": 1000,
+      "percentage": 44.8
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "44.8% of patients have Part-time employment.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Part-time employment (finding)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Full-time employment?",
+    "mode": "population",
+    "expected": {
+      "n": 609,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "According to the employment status records, 609 out of 1000 patients have Full-time employment.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Full-time employment (finding)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Full-time employment?",
+    "mode": "population",
+    "expected": {
+      "n": 609,
+      "total": 1000,
+      "percentage": 60.9
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "According to the employment data, 60.9% of patients have Full-time employment.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Full-time employment (finding)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Limited social contact?",
+    "mode": "population",
+    "expected": {
+      "n": 287,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "According to the [observation_panel] records, 287 patients have Limited social contact.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Limited social contact (finding)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Limited social contact?",
+    "mode": "population",
+    "expected": {
+      "n": 287,
+      "total": 1000,
+      "percentage": 28.7
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "28.7% of patients have Limited social contact.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Limited social contact (finding)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Gingivitis?",
+    "mode": "population",
+    "expected": {
+      "n": 620,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "According to the records, 620 patients have been diagnosed with Gingivitis.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Gingivitis (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Gingivitis?",
+    "mode": "population",
+    "expected": {
+      "n": 620,
+      "total": 1000,
+      "percentage": 62.0
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "62% of patients have Gingivitis.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Gingivitis (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Viral sinusitis?",
+    "mode": "population",
+    "expected": {
+      "n": 399,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "There are 399 patients with Viral sinusitis.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Viral sinusitis (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Viral sinusitis?",
+    "mode": "population",
+    "expected": {
+      "n": 399,
+      "total": 1000,
+      "percentage": 39.9
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "Based on the query result, 39.9% of patients have Viral sinusitis.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Viral sinusitis (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "How many patients have Acute bronchitis?",
+    "mode": "population",
+    "expected": {
+      "n": 222,
+      "total": 1000
+    },
+    "expected_answer_type": "count",
+    "model_answer": "There are 222 patients with Acute bronchitis.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Acute bronchitis (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  },
+  {
+    "question": "What percentage of patients have Acute bronchitis?",
+    "mode": "population",
+    "expected": {
+      "n": 222,
+      "total": 1000,
+      "percentage": 22.2
+    },
+    "expected_answer_type": "percentage",
+    "model_answer": "22.2% of patients have Acute bronchitis.",
+    "router_path": "structured",
+    "router_reason": "matched counting pattern, routed to structured query on condition 'Acute bronchitis (disorder)'",
+    "router_path_correct": true,
+    "retrieved_record_types": [],
+    "answer_correct": true
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "total_questions": 40,
+  "graded_questions": 40,
+  "answer_accuracy": 0.675,
+  "router_accuracy": 1.0,
+  "by_mode": {
+    "patient": {
+      "n": 20,
+      "answer_accuracy": 0.35
+    },
+    "population": {
+      "n": 20,
+      "answer_accuracy": 1.0
+    }
+  }
+}
